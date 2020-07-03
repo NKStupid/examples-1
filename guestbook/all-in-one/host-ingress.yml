@@ -1,0 +1,16 @@
+  
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: frontend.chensiyi.dev  
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: frontend.chensiyi.dev
+    http:
+      paths:
+      - backend:
+          serviceName: frontend
+          servicePort: 80
+        path: /
